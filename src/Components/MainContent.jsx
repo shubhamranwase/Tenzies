@@ -47,7 +47,7 @@ export default function MainContent() {
             {gameWon && <Confetti mode="fall" particleCount={50} colors={['#ff577f', '#ff884b']} />}
             <main className="flex flex-col justify-center items-center">
                 <p className="instructions text-white font-light text-xl w-80 h-30 text-center p-3">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
-                <div className="container h-100 w-full flex flex-col items-center">
+                <div className="container h-100 w-full mx-3 flex flex-col items-center">
                     <div className="box p-3 bg-white rounded-2xl shadow-[0_3px_6px_rgba(0,0,0,0.16)] grid grid-cols-5 grid-rows-2 justify-items-center gap-3">
                         {diceElements}
                     </div>
