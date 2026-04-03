@@ -1,0 +1,6 @@
+@import "tailwindcss";
+/* npx @tailwindcss/cli -i ./src/TailwindCSS/input.css -o ./src/TailwindCSS/output.css  --watch */
+
+body {
+    background-color: rgba(12, 8, 37, 0.758);
+}
