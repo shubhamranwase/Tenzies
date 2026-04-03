@@ -51,7 +51,7 @@ export default function MainContent() {
                     <div className="box p-3 bg-white rounded-2xl shadow-[0_3px_6px_rgba(0,0,0,0.16)] grid grid-cols-5 grid-rows-2 justify-items-center gap-3">
                         {diceElements}
                     </div>
-                    <button ref={buttonRef} className="w-32 h-12 font-medium bg-amber-500 hover:bg-amber-600 hover:scale-110 active:scale-95 active:bg-amber-700 transition duration-400 ease-in-out text-white text-xl py-2 px-4 rounded-xl mt-6 cursor-pointer"
+                    <button ref={buttonRef} className="w-fit h-12 font-medium bg-amber-500 hover:bg-amber-600 hover:scale-110 active:scale-95 active:bg-amber-700 transition duration-400 ease-in-out text-white text-xl py-2 px-4 rounded-xl mt-6 cursor-pointer"
                         onClick={rollDice} >{buttonText}</button>
                 </div>
             </main>
