@@ -21,7 +21,7 @@ export default function MainContent() {
 
     const gameWon = dice.every(die => die.isHeld) && dice.every(die => die.value === dice[0].value)
 
-    const buttonText = gameWon ? "New Game" : gameStarted ? "Roll Dice" : "Start Game"
+    const buttonText = gameWon ? ("Game Won") : (gameStarted ? "Roll Dice" : "Start Game")
 
     function count() {
         setRollCount(prevCount => prevCount + 1)
@@ -54,7 +54,9 @@ export default function MainContent() {
 
     function rollDice() {
         setGameStarted(true)
-        count()
+        if (gameStarted) {
+            count()
+        }
         if (!gameWon) {
             setDice((oldDice) => oldDice.map((die) => die.isHeld ? die : { ...die, value: Math.ceil(Math.random() * 6) }))
         } else {
@@ -90,11 +92,11 @@ export default function MainContent() {
                         {diceElements}
                     </div>
                     <div className="buttons flex items-center justify-center gap-3">
-                        <p className="counter w-fit h-12 font-medium bg-amber-500 transition duration-400 ease-in-out text-white text-2xl py-2 px-4 rounded-xl mt-6">{rollCount}</p>
+                        {gameStarted && <p className="counter w-fit h-12 font-medium bg-amber-500 transition duration-400 ease-in-out text-white text-2xl py-2 px-4 rounded-xl mt-6">{rollCount}</p>}
                         <button ref={buttonRef} className="w-fit h-12 font-medium bg-amber-500 hover:bg-[rgb(255,140,0)] hover:scale-110 active:scale-95 active:bg-amber-600 transition duration-400 ease-in-out text-white text-2xl py-2 px-4 rounded-xl mt-6 cursor-pointer"
                             onClick={rollDice} >{buttonText}</button>
-                        <button className="w-fit h-12 font-medium bg-[rgb(255,68,68)] hover:bg-red-500 hover:scale-110 active:scale-95 active:bg-red-700 transition duration-400 ease-in-out text-white text-2xl py-2 px-4 rounded-xl mt-6 cursor-pointer"
-                            onClick={Reset} >Reset</button>
+                        {gameStarted && <button className="w-fit h-12 font-medium bg-[rgb(255,68,68)] hover:bg-red-500 hover:scale-110 active:scale-95 active:bg-red-700 transition duration-400 ease-in-out text-white text-2xl py-2 px-4 rounded-xl mt-6 cursor-pointer"
+                            onClick={Reset} >Reset</button>}
                     </div>
                 </div>
             </main>
