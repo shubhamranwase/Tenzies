@@ -55,9 +55,6 @@ export default function MainContent() {
     function rollDice() {
         setGameStarted(true)
         count()
-        if (gameStarted) {
-            generateAllNewDice()
-        }
         if (!gameWon) {
             setDice((oldDice) => oldDice.map((die) => die.isHeld ? die : { ...die, value: Math.ceil(Math.random() * 6) }))
         } else {
