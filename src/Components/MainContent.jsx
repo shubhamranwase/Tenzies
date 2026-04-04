@@ -90,11 +90,11 @@ export default function MainContent() {
                         {diceElements}
                     </div>
                     <div className="buttons flex items-center justify-center gap-3">
-                        <p className="counter w-fit h-12 font-medium bg-amber-500 transition duration-400 ease-in-out text-white text-2xl py-2 px-4 rounded-xl mt-6 cursor-pointer">{rollCount}</p>
+                        <p className="counter w-fit h-12 font-medium bg-amber-500 transition duration-400 ease-in-out text-white text-2xl py-2 px-4 rounded-xl mt-6">{rollCount}</p>
                         <button ref={buttonRef} className="w-fit h-12 font-medium bg-amber-500 hover:bg-[rgb(255,140,0)] hover:scale-110 active:scale-95 active:bg-amber-600 transition duration-400 ease-in-out text-white text-2xl py-2 px-4 rounded-xl mt-6 cursor-pointer"
                             onClick={rollDice} >{buttonText}</button>
                         <button className="w-fit h-12 font-medium bg-[rgb(255,68,68)] hover:bg-red-500 hover:scale-110 active:scale-95 active:bg-red-700 transition duration-400 ease-in-out text-white text-2xl py-2 px-4 rounded-xl mt-6 cursor-pointer"
-                            onClick={Reset} >↺</button>
+                            onClick={Reset} >Reset</button>
                     </div>
                 </div>
             </main>
