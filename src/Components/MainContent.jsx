@@ -61,6 +61,7 @@ export default function MainContent() {
             setDice(() => generateAllNewDice())
             setSeconds(0)
             setMinutes(0)
+            setRollCount(0)
         }
     }
 
